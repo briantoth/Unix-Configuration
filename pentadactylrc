@@ -1,0 +1,50 @@
+"hg6375 "(created 2011/08/10 00:00:09)"
+
+loadplugins '\.(js|penta)$'
+group user
+
+"make the space bar page down half a page
+map -count -modes=n <space> -builtin <C-d>
+
+"use J and K to move back and forth between tabs
+map -count -modes=n J -builtin <count>gT
+map -count -modes=n K -builtin <count>gt
+
+"use s to move up half a page
+map -count -modes=n s -builtin <C-u>
+
+"go straight to text edit mode when clicking on text boxes - trying to not use this
+"set noinsertmode
+
+"for all sites, pass through select all, copy, cut, and paste set passkeys=*:<C-c>,*:<C-v>,*:<C-x>,*:<C-a>,*:<C-z>
+
+"hints appear uppercase, but can be typed lowercase
+highlight -a Hint text-transform: uppercase
+
+" use the listed characters to enumerate quickhint elements
+set hintkeys=asdfg;lkjh
+
+" view native size of image without clicking it - haven't tried this yet
+" nmap <leader>z :js window.content.document.toggleImageSize();<CR>
+
+" not sure what this does, try it out later
+" set mapleader=","
+
+" toggle menu toolbar - haven't tried this yet
+" nmap <C-F1> :set guioptions!=m<CR>
+
+" toggle bookmarks toolbar - haven't tried this yet
+" nmap <C-F2> :set guioptions!=B<CR>
+
+" use this to mess around with the size and color of hints
+highlight Hint font-size:120%;color:white;background-color:red;padding:2px;
+
+"need some way to enter visual block mode <C-v>
+
+" vim: set ft=pentadactyl:
+
+"removes all scroll bars, menu bars, etc.  leaves tab numbers and status bars
+:set go=ns
+
+"hide the tab bar.  tab bar is for weaklings!
+:set showtabline=never

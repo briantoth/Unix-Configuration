@@ -1,0 +1,12 @@
+Bundle 'nono/vim-handlebars'
+Bundle 'tfnico/vim-gradle'
+
+let g:spf13_no_fastTabs=1
+
+"use control-o to join lines
+noremap <C-O> <S-J>
+
+"use J and K to move to the tab to the left or right
+"TODO: move this to .vimrc.local
+nnoremap <S-J> :bn<CR>
+nnoremap <S-K> :bp<CR>

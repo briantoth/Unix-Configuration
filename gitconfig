@@ -1,0 +1,28 @@
+[user]
+  name = Brian Toth
+[core]
+  autocrlf = false
+  safecrlf = true
+  editor = vim
+[alias]
+  co = checkout
+  ci = commit
+  st = status
+  br = branch
+  hist = log --pretty=format:\"%h %ad | %s%d [%an]\" --graph --date=short
+  type = cat-file -t
+  dump = cat-file -p
+[color]
+  status = auto
+  branch = auto
+  ui = auto
+[diff]
+	tool = meld
+[difftool "diffmerge"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
+[merge]
+	tool = mymeld
+[mergetool "mymeld"]
+	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+[push]
+	default = simple

@@ -1,0 +1,12 @@
+Bundle 'nono/vim-handlebars'
+Bundle 'mileszs/ack.vim'
+Bundle 'tfnico/vim-gradle'
+
+UnBundle 'airblade/vim-gitgutter'
+
+"Ignore angular 'proprietary attribute' warnings
+let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"jqyoui-"]
+
+"special indendatation for coffeescript
+autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
+
