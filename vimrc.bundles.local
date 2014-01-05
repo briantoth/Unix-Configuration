@@ -1,6 +1,7 @@
 Bundle 'nono/vim-handlebars'
 Bundle 'tfnico/vim-gradle'
 
+"Keep default behavior for H and L (move cursor to top and bottom of screen)
 let g:spf13_no_fastTabs=1
 
 "use control-o to join lines
