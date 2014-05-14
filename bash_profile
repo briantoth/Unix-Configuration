@@ -35,6 +35,6 @@ alias usejava6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6) ; PATH=$JAVA_H
 alias usejava7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7) ; PATH=$JAVA_HOME/bin:$PATH'
 
 #load up the git completion script if it exists
-if [ -f ~/.git-completion.bash ]; then
-  . ~/.git-completion.bash
+if [ -f ~/config/git-completion.bash ]; then
+  . ~/config/git-completion.bash
 fi
