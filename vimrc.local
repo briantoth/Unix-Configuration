@@ -10,3 +10,5 @@ let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " propr
 "special indendatation for coffeescript
 autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
 
+"ability to edit zipped files
+au BufReadCmd   *.jar,*.war,*.ear,*.sar,*.rar,*.par        call zip#Browse(expand("<amatch>"))

@@ -7,7 +7,7 @@ set -o vi
 export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
 
 #add trails to path
-PATH=$PATH:~/dev/trails-0.3.1/bin/unix/
+PATH=$PATH:~/dev/trails/bin/unix/
 
 ##
 # Your previous /Users/btoth/.bash_profile file was backed up as /Users/btoth/.bash_profile.macports-saved_2013-07-18_at_12:10:23
@@ -33,3 +33,8 @@ PATH=$PATH:~/dev/coffeelint/bin
 #see: https://groups.google.com/forum/#!topic/scala-internals/Gbtrj7atSZk
 alias usejava6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6) ; PATH=$JAVA_HOME/bin:$PATH'
 alias usejava7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7) ; PATH=$JAVA_HOME/bin:$PATH'
+
+#load up the git completion script if it exists
+if [ -f ~/.git-completion.bash ]; then
+  . ~/.git-completion.bash
+fi
