@@ -4,11 +4,6 @@ export LSCOLORS=GxFxCxDxBxegedabagaced
 #use vi mode for command line
 set -o vi
 
-export JAVA_HOME=$(/usr/libexec/java_home -v 1.7)
-
-#add trails to path
-PATH=$PATH:~/dev/trails/bin/unix/
-
 ##
 # Your previous /Users/btoth/.bash_profile file was backed up as /Users/btoth/.bash_profile.macports-saved_2013-07-18_at_12:10:23
 ##
@@ -33,8 +28,20 @@ PATH=$PATH:~/dev/coffeelint/bin
 #see: https://groups.google.com/forum/#!topic/scala-internals/Gbtrj7atSZk
 alias usejava6='export JAVA_HOME=$(/usr/libexec/java_home -v 1.6) ; PATH=$JAVA_HOME/bin:$PATH'
 alias usejava7='export JAVA_HOME=$(/usr/libexec/java_home -v 1.7) ; PATH=$JAVA_HOME/bin:$PATH'
+alias usejava8='export JAVA_HOME=$(/usr/libexec/java_home -v 1.8) ; PATH=$JAVA_HOME/bin:$PATH'
+
+#default to java 8
+usejava8
 
 #load up the git completion script if it exists
 if [ -f ~/config/git-completion.bash ]; then
   . ~/config/git-completion.bash
 fi
+
+#add go language to path
+export PATH=$PATH:/usr/local/go/bin
+#go workspace
+export GOPATH=$HOME/code/brian/go
+#add go binary files to path
+export PATH=$PATH:$GOPATH/bin
+

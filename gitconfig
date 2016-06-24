@@ -1,5 +1,6 @@
 [user]
   name = Brian Toth
+  email = btoth@palantir.com
 [core]
   autocrlf = false
   safecrlf = true
@@ -17,12 +18,19 @@
   branch = auto
   ui = auto
 [diff]
-	tool = meld
+	tool = diffmerge
 [difftool "diffmerge"]
 	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [merge]
-	tool = mymeld
+	tool = diffmerge
+	conflictstyle = diff3
 [mergetool "mymeld"]
+	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
 [push]
 	default = simple
+[rerere]
+	enabled = 1
+[mergetool "diffmerge"]
+	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
+	trustExitCode = true

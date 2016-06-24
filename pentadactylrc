@@ -48,3 +48,21 @@ highlight Hint font-size:120%;color:white;background-color:red;padding:2px;
 
 "hide the tab bar.  tab bar is for weaklings!
 :set showtabline=never
+
+"new tab menu now includes open tabs in search https://github.com/5digits/dactyl/issues/52
+js <<EOF
+overlay.overlayObject(dactyl, {
+    open: function open(urls, params, force) {
+        if (typeof urls === "string") {
+            let matches = urls.match(/^(\d+): /);
+            if (matches) {
+                tabs.switchTo(urls, true);
+                return;
+            }
+        }
+        open.superapply(this, arguments);
+    }
+});
+completion.addUrlCompleter("buffer", "Open Tabs", completion.buffer);
+options["complete"].splice(0, 0, "buffer");
+EOF
