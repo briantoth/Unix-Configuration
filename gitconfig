@@ -17,20 +17,9 @@
   status = auto
   branch = auto
   ui = auto
-[diff]
-	tool = diffmerge
-[difftool "diffmerge"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
 [merge]
-	tool = diffmerge
-	conflictstyle = diff3
-[mergetool "mymeld"]
-	cmd = diffmerge \"$LOCAL\" \"$REMOTE\"
-	cmd = meld "$LOCAL" "$MERGED" "$REMOTE"
+  conflictstyle = diff3
 [push]
-	default = simple
+  default = simple
 [rerere]
-	enabled = 1
-[mergetool "diffmerge"]
-	cmd = "diffmerge --merge --result=\"$MERGED\" \"$LOCAL\" \"$(if test -f \"$BASE\"; then echo \"$BASE\"; else echo \"$LOCAL\"; fi)\" \"$REMOTE\""
-	trustExitCode = true
+  enabled = 1
