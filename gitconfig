@@ -1,6 +1,6 @@
 [user]
   name = Brian Toth
-  email = btoth@palantir.com
+  email = bri.toth@gmail.com
 [core]
   autocrlf = false
   safecrlf = true
@@ -23,3 +23,5 @@
   default = simple
 [rerere]
   enabled = 1
+[pull]
+  rebase = true
