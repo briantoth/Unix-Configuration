@@ -1,8 +1,12 @@
-"Ignore angular 'proprietary attribute' warnings
+" Ignore angular 'proprietary attribute' warnings
 let g:syntastic_html_tidy_ignore_errors=[" proprietary attribute \"ng-", " proprietary attribute \"jqyoui-"]
 
-"special indendatation for coffeescript
+" special indendatation for coffeescript
 autocmd FileType coffee setlocal expandtab shiftwidth=2 softtabstop=2
 
-"ability to edit zipped files
+" ability to edit zipped files
 au BufReadCmd   *.jar,*.war,*.ear,*.sar,*.rar,*.par        call zip#Browse(expand("<amatch>"))
+
+" For autocompletion, enter selects current choice, as does escape sequence
+inoremap <expr> <CR> pumvisible() ? "\<C-Y>" : "\<CR>"
+inoremap <expr> <C-[> pumvisible() ? "\<C-Y><C-[>" : "\<C-[>"
